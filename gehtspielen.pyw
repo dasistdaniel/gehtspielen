@@ -2,6 +2,10 @@ import ctypes
 import sched
 import time
 import os
+import argparse
+
+parser = argparse.ArgumentParser(description='gehtspielen - time based logout')
+parser.add_argument('name', action="store")
 
 dateiname = 'zeit.save'
 intervall = 60 # Sekunden
@@ -48,7 +52,7 @@ def savetime(datei, datum, zeit):
     f.close()
     
 def kill():
-    ctypes.windll.user32.ExitWindowsEx(0, 1)
+    #ctypes.windll.user32.ExitWindowsEx(0, 1)
     print "kill"
 
 if __name__ == "__main__":
